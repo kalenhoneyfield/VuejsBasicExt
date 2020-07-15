@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Skimmit News</title>
+  </head>
+  <body>
+    <div id="app" class="container" v-on:click="getColorWheelPosition(1)">
+      <!-- <div
+        class="post"
+        v-for="item in colors"
+        v-show="bool"
+        v-bind:style="{ 'background-color': item.rgb }"
+        v-bind:title="message"
+      >
+        {{item.rgb}}
+      </div> -->
+      <ul v-if="colors">
+        <color-item
+          class="post"
+          v-for="(item, index) in colors"
+          v-show="bool"
+          v-bind:style="{ 'background-color': item.rgb }"
+          v-bind:title="message"
+          v-bind:color-val="item"
+          v-bind:key="index"
+        >
+        </color-item>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
